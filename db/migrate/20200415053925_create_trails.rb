@@ -6,10 +6,10 @@ class CreateTrails < ActiveRecord::Migration[6.0]
       t.string :difficulty
       t.string :location
       t.string :url
-      t.string :length
-      t.string :ascent
-      t.string :longitude
-      t.string :latitude
+      t.integer :length
+      t.integer :ascent
+      t.integer :longitude
+      t.integer :latitude
       t.string :condition_status
       t.string :condition_details
       t.string :condition_date
