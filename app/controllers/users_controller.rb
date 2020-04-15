@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authenticate, only: [:index, :show, :update, :destroy]
+    
     def index
         @users = User.all
         render json: @users
