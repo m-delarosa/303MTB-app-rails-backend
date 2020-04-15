@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_043357) do
+ActiveRecord::Schema.define(version: 2020_04_15_053925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "trails", force: :cascade do |t|
+    t.integer "mtb_project_id"
+    t.string "name"
+    t.string "difficulty"
+    t.string "location"
+    t.string "url"
+    t.string "length"
+    t.string "ascent"
+    t.string "longitude"
+    t.string "latitude"
+    t.string "condition_status"
+    t.string "condition_details"
+    t.string "condition_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
