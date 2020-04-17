@@ -8,12 +8,12 @@ class AuthenticationController < ApplicationController
                 secret = Rails.application.secrets.secret_key_base
                 token = JWT.encode(payload, secret)
 
-                render json: { token: token }
+                render json: { token: token, message: "Account login was sucessful!", user: @user }
             else
-            render json: "Please verify login credentials and try again."
+            render json: { message: "Please verify login credentials and try again."}
             end
         else
-            render json: "Unauthorized!"
+            render json: { message: "Please verify login credentials and try again."}
         end
     end
 end

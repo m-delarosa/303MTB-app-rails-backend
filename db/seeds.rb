@@ -1,4 +1,6 @@
+UserTrail.destroy_all
 Trail.destroy_all
+
 
 response = RestClient.get("https://www.mtbproject.com/data/get-trails?lat=39.6965&lon=-105.1002&maxDistance=100&maxResults=100&key=4790190-4582a5581cccc3d3274321dca72ea4b1")
 result = JSON.parse(response)
