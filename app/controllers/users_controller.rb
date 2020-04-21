@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-        render json: {message: "User was successfully created!", user: @user}
+        render json: {message: "Your account was successfully created!", user: @user}
         else
         render json: @user.errors.messages
         end
