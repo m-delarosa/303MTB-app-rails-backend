@@ -8,7 +8,7 @@ Live Demo: www.303MTB.org
 
 [Video Presentation for Flatiron School](https://youtu.be/znnAHKrnrC4)
 
-![303MTB Mobile Demo GIF](demo/303mobile_original.gif)
+![303MTB Mobile Demo GIF](screenshots/303mobile_original.gif)
 ![303MTB Browser Screen 1](screenshots/browser1.png)
 ![303MTB Mobile Screen 2](screenshots/browser2.png)
 ![303MTB Mobile Screen 3](screenshots/browser3.png)
