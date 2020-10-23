@@ -4,6 +4,7 @@
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { :host => "localhost3001" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.cache_classes = false

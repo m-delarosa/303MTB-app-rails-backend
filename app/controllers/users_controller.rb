@@ -14,9 +14,25 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-        render json: {message: "Your account was successfully created!", user: @user}
+            UserMailer.registration_confirmation(@user).deliver
+            render json: {message: "Please confirm your email address to continue"}
+            # redirect_to root_url
+            # Not sure if I need this redirect the way I have things set up.
         else
         render json: @user.errors.messages
+        end
+    end
+
+    def confirm_email
+        user = User.find_by_confirm_token(params[:id])
+        if user
+            user.email_activate
+            flash[:success] = "Welcome to 303MTB! Your email has been confirmed.
+            Please sign in to continue."
+            # redirect_to signin_url
+        else
+            flash[:error] = "Sorry. User does not exist"
+            redirect_to root_url
         end
     end
         
