@@ -5,8 +5,10 @@ class AuthenticationController < ApplicationController
         if @user
             if @user.authenticate(params[:password])
                 payload = { user_id: @user.id }
+
                 puts "before secret marker"
-                secret = Rails.application.secrets.secret_key_base
+                # secret = Rails.application.secrets.secret_key_base
+                secret = ENV.SECRET_KEY_BASE
                 puts "after secret marker"
                 token = JWT.encode(payload, secret)
                 puts "after token encode marker"
