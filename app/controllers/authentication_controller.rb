@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
 
                 puts "before secret marker"
                 # secret = Rails.application.secrets.secret_key_base
-                secret = ENV.SECRET_KEY_BASE
+                secret = ENV['SECRET_KEY_BASE']
                 puts "after secret marker"
                 token = JWT.encode(payload, secret)
                 puts "after token encode marker"
