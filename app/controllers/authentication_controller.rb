@@ -9,7 +9,7 @@ class AuthenticationController < ApplicationController
                 token = JWT.encode(payload, secret)
 
                 # if token 
-                render json: { token: token, message: "Account login was sucessful!", user: @user }
+                render json: { token: token, message: "Account login was sucessful!"}
                 # else
                 #     render json: { message: "No Token"}
                 # end
