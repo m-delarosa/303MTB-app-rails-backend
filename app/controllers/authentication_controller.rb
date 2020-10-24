@@ -7,7 +7,7 @@ class AuthenticationController < ApplicationController
                 payload = { user_id: @user.id }
                 puts "before secret"
                 secret = Rails.application.secrets.secret_key_base
-                put "after secrert"
+                puts "after secret"
                 token = JWT.encode(payload, secret)
 
                 render json: { token: token, message: "Account login was sucessful!", user: @user }
