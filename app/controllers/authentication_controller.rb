@@ -10,8 +10,10 @@ class AuthenticationController < ApplicationController
                 puts "after secret marker"
                 token = JWT.encode(payload, secret)
                 puts "after token encode marker"
-                puts "secret is" secret
-                puts "token is" token
+                puts "secret is" 
+                puts secret
+                puts "token is" 
+                puts token 
 
                 if token 
                     render json: { token: token, message: "Account login was sucessful!", user: @user }
