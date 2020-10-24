@@ -8,12 +8,7 @@ class AuthenticationController < ApplicationController
                 secret = ENV['SECRET_KEY_BASE']
                 token = JWT.encode(payload, secret)
 
-                # if token 
                 render json: { token: token, message: "Account login was sucessful!", user: @user }
-                # else
-                #     render json: { message: "No Token"}
-                # end
-                
             else
             render json: { message: "Please verify login credentials and try again."}
             end
